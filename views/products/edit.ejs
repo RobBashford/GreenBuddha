@@ -5,11 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit Product</title>
 </head>
 
-<body>
 
+<body>
+    <h1>Edit Product
+    </h1>
+    <form action="/products/<%=product._id%>?_method=PUT" method="POST">
+        <label for="name">Product Name</label>
+        <input type="text" name="name" id="name" placeholder="product name" value="<%=product.name%>">
+
+        <label for="price">Price (unit)</label>
+        <input type="number" name="price" id="price" placeholder="price" value="<%=product.price%>">
+
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description" placeholder="description"
+            value="<%=product.description%>">
+
+        <input type="text" name="image" id="image" placeholder="image" value="<%=product.image%>">
+
+        <button>Submit</button>
+        <a href="/products/<%=product._id%>">Cancel</a>
+
+    </form>
 </body>
 
 </html>
